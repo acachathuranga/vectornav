@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
 <launch>
+	
+	<!-- Launch Foot IMU -->
+	<node pkg="vectornav" type="vnpub" name="footIMU" output="screen" > 
+             <rosparam command="load" file="$(find vectornav)/params/footIMU.yaml" />	  
+	</node>	
 
-	<node pkg="vectornav" type="vnpub" name="vectornav" output="screen" > 
-      <rosparam command="load" file="$(find vectornav)/params/vn100.yaml" />	  
+	<!-- Launch Waist IMU -->
+	<node pkg="vectornav" type="vnpub" name="waistIMU" output="screen" > 
+             <rosparam command="load" file="$(find vectornav)/params/waistIMU.yaml" />	  
 	</node>	
 	
 </launch>

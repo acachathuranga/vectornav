@@ -107,14 +107,14 @@ int main(int argc, char *argv[])
     ros::NodeHandle n;
     ros::NodeHandle pn("~");
 
-    pubIMU = n.advertise<sensor_msgs::Imu>("vectornav/IMU", 1000);
-    pubMag = n.advertise<sensor_msgs::MagneticField>("vectornav/Mag", 1000);
-    pubGPS = n.advertise<sensor_msgs::NavSatFix>("vectornav/GPS", 1000);
-    pubOdom = n.advertise<nav_msgs::Odometry>("vectornav/Odom", 1000);
-    pubTemp = n.advertise<sensor_msgs::Temperature>("vectornav/Temp", 1000);
-    pubPres = n.advertise<sensor_msgs::FluidPressure>("vectornav/Pres", 1000);
+    pubIMU = n.advertise<sensor_msgs::Imu>(ros::this_node::getName()+"/IMU", 1000);
+    pubMag = n.advertise<sensor_msgs::MagneticField>(ros::this_node::getName()+"/Mag", 1000);
+    pubGPS = n.advertise<sensor_msgs::NavSatFix>(ros::this_node::getName()+"/GPS", 1000);
+    pubOdom = n.advertise<nav_msgs::Odometry>(ros::this_node::getName()+"/Odom", 1000);
+    pubTemp = n.advertise<sensor_msgs::Temperature>(ros::this_node::getName()+"/Temp", 1000);
+    pubPres = n.advertise<sensor_msgs::FluidPressure>(ros::this_node::getName()+"/Pres", 1000);
 
-    resetOdomSrv = n.advertiseService("reset_odom", resetOdom);
+    resetOdomSrv = n.advertiseService(ros::this_node::getName()+"reset_odom", resetOdom);
 
     // Serial Port Settings
     string SensorPort;

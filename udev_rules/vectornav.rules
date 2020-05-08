@@ -1,0 +1,5 @@
+# Copy this file to /etc/udev/rules.d/ directory and set the Vendor Id, Product Id, Serial number and symlink name as required. 
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="FT40ANU1", SYMLINK+="footIMU" 
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="FTXWKV6M", SYMLINK+="waistIMU"
