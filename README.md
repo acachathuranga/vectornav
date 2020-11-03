@@ -20,7 +20,7 @@ via a USB cable and that you have already created a [catkin workspace][2]
 Build:
 
 1. cd ~/catkin_ws/src
-2. git clone https://github.com/dawonn/vectornav.git
+2. git clone https://github.com/acachathuranga/vectornav.git
 3. cd ..
 4. catkin_make
 
@@ -41,7 +41,7 @@ Added Udev Rules for vectornav IMUs. Please refer to 'udev_rules/vectornav.rules
 
 Added launch file and configuration files for VN200
 
-IMU topics are now scoped under the name of the package. Hence now it is possible to run multiple instances of the IMU node (Now multiple IMUs can be used together)
+IMU topics are now scoped under the name of the package. Hence now it is possible to run multiple instances of the IMU node (Now multiple IMUs can be used together) without ROS namespacing.
 
 
 
